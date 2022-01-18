@@ -21,8 +21,8 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<Void> createPost(@RequestBody PostRequest postRequest) {
-        postService.save(postRequest);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        Long id = postService.save(postRequest);
+        return new ResponseEntity(id, HttpStatus.CREATED);
     }
 
     @GetMapping
@@ -43,7 +43,7 @@ public class PostController {
     @PutMapping("/{id}")
     public ResponseEntity<Void> updatePost(@PathVariable Long id, @RequestBody PostRequest postRequest) {
         postService.update(id, postRequest);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity(id, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

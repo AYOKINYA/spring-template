@@ -30,9 +30,9 @@ public class PostService {
     private final AuthService authService;
 
     @Transactional
-    public void save(PostRequest postRequest) {
+    public Long save(PostRequest postRequest) {
 
-        postRepository.save(dtoToPost(postRequest));
+        return postRepository.save(dtoToPost(postRequest)).getPostId();
     }
 
     @Transactional(readOnly = true)
@@ -61,11 +61,13 @@ public class PostService {
     }
 
     @Transactional
-    public void update(Long id, PostRequest postRequest) {
+    public Long update(Long id, PostRequest postRequest) {
         Post post = postRepository.findById(id)
                 .orElseThrow(()->new PostNotFoundException(id.toString()));
 
         post.updatePost(postRequest.getPostName(), postRequest.getDescription());
+
+        return id;
     }
 
     @Transactional
