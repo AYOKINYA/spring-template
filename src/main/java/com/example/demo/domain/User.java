@@ -1,7 +1,6 @@
 package com.example.demo.domain;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -11,14 +10,16 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Getter
 @NoArgsConstructor
-public class Member {
+@Getter
+@Table(name="app_user")
+public class User {
 
     @Id
-    private Long memberId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long userId;
 
-    private String memberName;
+    private String username;
 
     private String password;
 
@@ -33,8 +34,8 @@ public class Member {
     }
 
     @ManyToMany
-    @JoinTable(name = "member_roles",
-            joinColumns = @JoinColumn(name = "member_member_id"),
+    @JoinTable(name = "app_user_roles",
+            joinColumns = @JoinColumn(name = "app_user_user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
@@ -43,8 +44,8 @@ public class Member {
     }
 
     @Builder
-    public Member(String memberName, String password, String email, Instant created, Boolean enabled, Set<Role> roles) {
-        this.memberName = memberName;
+    public User(String username, String password, String email, Instant created, Boolean enabled, Set<Role> roles) {
+        this.username = username;
         this.password = password;
         this.email = email;
         this.created = created;

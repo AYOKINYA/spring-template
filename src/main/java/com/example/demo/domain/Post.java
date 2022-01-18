@@ -22,8 +22,8 @@ public class Post {
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "memberId", referencedColumnName = "memberId")
-    private Member member;
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
+    private User user;
 
     private Instant createdDate;
 
