@@ -27,6 +27,14 @@ public class Post {
 
     private Instant createdDate;
 
+    @Builder
+    public Post(String postName, String description, User user, Instant createdDate) {
+        this.postName = postName;
+        this.description = description;
+        this.user = user;
+        this.createdDate = createdDate;
+    }
+
     public void updatePost(String postName, String description) {
         this.postName = postName;
         this.description = description;

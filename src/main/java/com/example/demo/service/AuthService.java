@@ -1,7 +1,9 @@
 package com.example.demo.service;
 
+import com.example.demo.Exception.DemoException;
 import com.example.demo.domain.*;
 import com.example.demo.security.JWTProvider;
+import com.example.demo.security.UserDetailsImpl;
 import com.example.demo.web.dto.AuthenticationResponse;
 import com.example.demo.web.dto.LoginRequest;
 import com.example.demo.web.dto.RefreshTokenRequest;
@@ -14,8 +16,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
@@ -82,5 +84,14 @@ public class AuthService {
                 .expiresAt(Instant.now().plusMillis(jwtProvider.getJwtExpirationInMillis()))
                 .username(refreshTokenRequest.getUsername())
                 .build();
+    }
+
+    @Transactional(readOnly = true)
+    public User getCurrentUser() {
+        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        return userRepository.findByUsername(principal.getUsername())
+                .orElseThrow(() -> new DemoException("" +
+                        "Username Not Found - " + principal.getUsername()));
     }
 }
