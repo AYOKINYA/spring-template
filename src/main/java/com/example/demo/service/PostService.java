@@ -71,11 +71,13 @@ public class PostService {
     }
 
     @Transactional
-    public void delete(Long id) {
+    public Long delete(Long id) {
         Post post = postRepository.findById(id)
                 .orElseThrow(()->new PostNotFoundException(id.toString()));
 
         postRepository.delete(post);
+
+        return id;
     }
 
     private Post dtoToPost(PostRequest postRequest) {

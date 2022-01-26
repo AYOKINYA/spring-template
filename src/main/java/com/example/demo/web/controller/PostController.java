@@ -20,9 +20,9 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping
-    public ResponseEntity<Void> createPost(@RequestBody PostRequest postRequest) {
+    public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest postRequest) {
         Long id = postService.save(postRequest);
-        return new ResponseEntity(id, HttpStatus.CREATED);
+        return status(HttpStatus.CREATED).body(postService.getPost(id));
     }
 
     @GetMapping
@@ -41,15 +41,15 @@ public class PostController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updatePost(@PathVariable Long id, @RequestBody PostRequest postRequest) {
+    public ResponseEntity<PostResponse> updatePost(@PathVariable Long id, @RequestBody PostRequest postRequest) {
         postService.update(id, postRequest);
-        return new ResponseEntity(id, HttpStatus.OK);
+        return status(HttpStatus.OK).body(postService.getPost(id));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
-        postService.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        Long deletedPostId = postService.delete(id);
+        return new ResponseEntity(deletedPostId ,HttpStatus.OK);
     }
 
 
