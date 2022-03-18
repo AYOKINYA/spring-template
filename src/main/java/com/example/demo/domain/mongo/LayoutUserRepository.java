@@ -1,7 +1,11 @@
 package com.example.demo.domain.mongo;
 
+import com.example.demo.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface LayoutUserRepository extends MongoRepository<LayoutUser, Long> {
+import java.util.Optional;
 
+public interface LayoutUserRepository extends MongoRepository<LayoutUser, Long> {
+    Optional<LayoutUser> findByUserId(Long userId);
+    void deleteByUserId(Long userId);
 }

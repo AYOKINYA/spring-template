@@ -1,6 +1,7 @@
 package com.example.demo.service;
 import com.example.demo.domain.User;
 import com.example.demo.domain.UserRepository;
+import com.example.demo.domain.mongo.Layout;
 import com.example.demo.domain.mongo.LayoutUser;
 import com.example.demo.domain.mongo.LayoutUserRepository;
 import com.example.demo.web.dto.LayoutDTO;
@@ -10,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -22,12 +24,12 @@ public class LayoutService {
     public LayoutDTO save(LayoutDTO layoutRequest) {
         User user = userRepository.findByUsername(layoutRequest.getUsername())
                 .orElseThrow(() -> new UsernameNotFoundException(layoutRequest.getUsername()));
-        Optional<LayoutUser> layoutUser = layoutUserRepository.findById(user.getUserId());
+        Optional<LayoutUser> layoutUser = layoutUserRepository.findByUserId(user.getUserId());
         if (layoutUser.isPresent()) {
-            layoutUserRepository.deleteById(user.getUserId());
+            layoutUserRepository.deleteByUserId(user.getUserId());
         }
-
-        layoutUserRepository.save(dtoToLayoutUser(user.getUserId(), layoutRequest));
+        LayoutUser newLayoutUser = dtoToLayoutUser(user.getUserId(), layoutRequest);
+        layoutUserRepository.save(newLayoutUser);
 
         return layoutRequest;
     }
@@ -35,7 +37,10 @@ public class LayoutService {
     private LayoutUser dtoToLayoutUser(Long id, LayoutDTO layoutDTO) {
         return LayoutUser.builder()
                 .userId(id)
-                .layouts(layoutDTO.getLayouts())
+                .layouts(layoutDTO.getLayouts()
+                        .stream()
+                        .map(layout -> new Layout(layout.getItems()))
+                        .collect(Collectors.toList()))
                 .build();
     }
 

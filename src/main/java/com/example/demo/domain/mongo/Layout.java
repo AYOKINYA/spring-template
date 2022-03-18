@@ -1,6 +1,5 @@
 package com.example.demo.domain.mongo;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
@@ -15,7 +14,6 @@ public class Layout {
     private ObjectId layoutId;
     private List<Item> items;
 
-    @Builder
     public Layout(List<Item> items) {
         this.layoutId = ObjectId.get();
         this.items = items;
