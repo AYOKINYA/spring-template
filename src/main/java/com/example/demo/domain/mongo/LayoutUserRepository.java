@@ -1,8 +1,6 @@
 package com.example.demo.domain.mongo;
 
-import com.example.demo.domain.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.Optional;
 
 public interface LayoutUserRepository extends MongoRepository<LayoutUser, Long> {
