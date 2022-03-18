@@ -1,10 +1,7 @@
 package com.example.demo.web.controller;
 
-import com.example.demo.domain.mongo.Layout;
 import com.example.demo.service.LayoutService;
-import com.example.demo.web.domain.LayoutRequest;
-import com.example.demo.web.dto.LayoutRequest;
-import com.example.demo.web.dto.LayoutResponse;
+import com.example.demo.web.dto.LayoutDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,11 +17,11 @@ import static org.springframework.http.ResponseEntity.status;
 @RequiredArgsConstructor
 public class LayoutController {
 
-    private final LayoutService;
+    private final LayoutService layoutService;
 
     @PostMapping
-    public ResponseEntity<LayoutResponse> saveLayout(@RequestBody LayoutRequest layoutRequest) {
-        LayoutResponse res = LayoutService.save(layoutRequest);
+    public ResponseEntity<LayoutDTO> saveLayout(@RequestBody LayoutDTO layoutRequest) {
+        LayoutDTO res = layoutService.save(layoutRequest);
         return status(HttpStatus.CREATED).body(res);
     }
 }

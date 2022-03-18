@@ -2,9 +2,11 @@ package com.example.demo.domain.mongo;
 
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 //내장 도큐먼트에는 @Document를 설정하지 않는다.
 @Getter
+@NoArgsConstructor
 public class Item {
 
     private int i;
@@ -17,8 +19,8 @@ public class Item {
     private boolean isStatic;
 
     @Builder
-    public Item(int x, int y, int w, int h, int maxW, int maxH, boolean isStatic) {
-
+    public Item(int i, int x, int y, int w, int h, int maxW, int maxH, boolean isStatic) {
+        this.i = i;
         this.x = x;
         this.y = y;
         this.w = w;

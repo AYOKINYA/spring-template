@@ -2,20 +2,22 @@ package com.example.demo.domain.mongo;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
 
 import javax.persistence.Id;
 import java.util.List;
 
-@Document(collection = "layouts")
 @Getter
+@NoArgsConstructor
 public class Layout {
     @Id
-    private String layoutId;
+    private ObjectId layoutId;
     private List<Item> items;
 
     @Builder
     public Layout(List<Item> items) {
+        this.layoutId = ObjectId.get();
         this.items = items;
     }
 }

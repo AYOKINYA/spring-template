@@ -12,11 +12,11 @@ public class LayoutUser {
 
     @Id
     private Long userId;
-    List<String> layoutIds;
+    List<Layout> layouts;
 
     @Builder
-    public LayoutUser(Long userId, List<String> layoutIds) {
+    public LayoutUser(Long userId, List<Layout> layouts) {
         this.userId = userId;
-        this.layoutIds = layoutIds;
+        this.layouts = layouts;
     }
 }
