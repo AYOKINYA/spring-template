@@ -6,9 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.ResponseEntity.status;
 
@@ -23,5 +21,11 @@ public class LayoutController {
     public ResponseEntity<LayoutDTO> saveLayout(@RequestBody LayoutDTO layoutRequest) {
         LayoutDTO res = layoutService.save(layoutRequest);
         return status(HttpStatus.CREATED).body(res);
+    }
+
+    @GetMapping("/{username}")
+    public ResponseEntity<LayoutDTO> getLayouts(@PathVariable String username) {
+        LayoutDTO res = layoutService.getLayouts(username);
+        return status(HttpStatus.OK).body(res);
     }
 }

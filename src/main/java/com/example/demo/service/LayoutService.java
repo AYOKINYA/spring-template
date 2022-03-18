@@ -31,7 +31,17 @@ public class LayoutService {
         LayoutUser newLayoutUser = dtoToLayoutUser(user.getUserId(), layoutRequest);
         layoutUserRepository.save(newLayoutUser);
 
-        return layoutRequest;
+        return new LayoutDTO(user.getUsername(), newLayoutUser.getLayouts());
+    }
+
+    public LayoutDTO getLayouts(String username) {
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException(username));
+
+        LayoutUser layoutUser = layoutUserRepository.findByUserId(user.getUserId())
+                .orElseThrow(() -> new UsernameNotFoundException(username));
+
+        return new LayoutDTO(username, layoutUser.getLayouts());
     }
 
     private LayoutUser dtoToLayoutUser(Long id, LayoutDTO layoutDTO) {
@@ -43,5 +53,6 @@ public class LayoutService {
                         .collect(Collectors.toList()))
                 .build();
     }
+
 
 }
