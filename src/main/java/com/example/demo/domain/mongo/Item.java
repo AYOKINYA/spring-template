@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Item {
 
-    private int i;
+    private String i;
     private int x;
     private int y;
     private int w;
@@ -23,7 +23,7 @@ public class Item {
 
     @Builder
     public Item(int i, int x, int y, int w, int h, int maxW, int maxH, boolean isStatic) {
-        this.i = i;
+        this.i = Integer.toString(i);
         this.x = x;
         this.y = y;
         this.w = w;
