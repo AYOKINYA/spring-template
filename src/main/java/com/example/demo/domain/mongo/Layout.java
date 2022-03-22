@@ -13,15 +13,18 @@ import java.util.List;
 public class Layout {
     @Id
     private String layoutId;
+    private String layoutName;
     private List<Item> items;
 
-    public Layout(List<Item> items) {
+    public Layout(String layoutName, List<Item> items) {
         this.layoutId = ObjectId.get().toHexString();
+        this.layoutName = layoutName;
         this.items = items;
     }
 
-    public Layout(String layoutId, List<Item> items) {
+    public Layout(String layoutId, String layoutName, List<Item> items) {
         this.layoutId = layoutId;
+        this.layoutName = layoutName;
         this.items = items;
     }
 }
