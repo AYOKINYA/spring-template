@@ -19,4 +19,9 @@ public class Layout {
         this.layoutId = ObjectId.get().toHexString();
         this.items = items;
     }
+
+    public Layout(String layoutId, List<Item> items) {
+        this.layoutId = layoutId;
+        this.items = items;
+    }
 }
