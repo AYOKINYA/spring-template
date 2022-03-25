@@ -49,7 +49,9 @@ public class LayoutService {
                 .userId(id)
                 .layouts(layoutDTO.getLayouts()
                         .stream()
-                        .map(layout -> (layout.getLayoutId() == null) ?  new Layout(layout.getLayoutName(), layout.getItems()) : new Layout(layout.getLayoutId(), layout.getLayoutName(), layout.getItems()))
+                        .map(layout -> (layout.getLayoutId() == null) ?
+                                new Layout(layout.getLayoutName(), layout.getItems(), layout.getIsVideoOn()) :
+                                new Layout(layout.getLayoutId(), layout.getLayoutName(), layout.getItems(), layout.getIsVideoOn()))
                         .collect(Collectors.toList()))
                 .build();
     }

@@ -14,17 +14,20 @@ public class Layout {
     @Id
     private String layoutId;
     private String layoutName;
+    private Boolean isVideoOn;
     private List<Item> items;
 
-    public Layout(String layoutName, List<Item> items) {
+    public Layout(String layoutName, List<Item> items, Boolean isVideoOn) {
         this.layoutId = ObjectId.get().toHexString();
         this.layoutName = layoutName;
         this.items = items;
+        this.isVideoOn = isVideoOn;
     }
 
-    public Layout(String layoutId, String layoutName, List<Item> items) {
+    public Layout(String layoutId, String layoutName, List<Item> items, Boolean isVideoOn) {
         this.layoutId = layoutId;
         this.layoutName = layoutName;
         this.items = items;
+        this.isVideoOn = isVideoOn;
     }
 }
