@@ -24,7 +24,7 @@ public class LayoutService {
     public LayoutDTO save(LayoutDTO layoutRequest) {
         User user = userRepository.findByUsername(layoutRequest.getUsername())
                 .orElseThrow(() -> new UsernameNotFoundException(layoutRequest.getUsername()));
-        Optional<LayoutUser> layoutUser = layoutUserRepository.findByUserId(user.getUserId());
+        Optional<LayoutUser> layoutUser = layoutUserRepository.findByUserIdOrderByLayoutName(user.getUserId());
         if (layoutUser.isPresent()) {
             layoutUserRepository.deleteByUserId(user.getUserId());
         }
@@ -38,7 +38,7 @@ public class LayoutService {
         User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException(username));
 
-        LayoutUser layoutUser = layoutUserRepository.findByUserId(user.getUserId())
+        LayoutUser layoutUser = layoutUserRepository.findByUserIdOrderByLayoutName(user.getUserId())
                 .orElseThrow(() -> new UsernameNotFoundException(username));
 
         return new LayoutDTO(username, layoutUser.getLayouts());
