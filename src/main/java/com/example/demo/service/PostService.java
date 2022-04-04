@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 
-import com.example.demo.Exception.PostNotFoundException;
+import com.example.demo.exception.PostNotFoundException;
 import com.example.demo.domain.Post;
 import com.example.demo.domain.PostRepository;
 import com.example.demo.domain.User;

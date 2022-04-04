@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Exception.DemoException;
+import com.example.demo.exception.DemoException;
 import com.example.demo.domain.*;
 import com.example.demo.security.JWTProvider;
 import com.example.demo.security.UserDetailsImpl;

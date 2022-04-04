@@ -1,7 +1,7 @@
-package com.example.demo.Exception;
+package com.example.demo.exception;
 
 public class PostNotFoundException extends RuntimeException{
     public PostNotFoundException(String message) {
-
+        super(message);
     }
 }

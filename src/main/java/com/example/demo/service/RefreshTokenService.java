@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Exception.DemoException;
+import com.example.demo.exception.DemoException;
 import com.example.demo.domain.RefreshToken;
 import com.example.demo.domain.RefreshTokenRepository;
 import lombok.RequiredArgsConstructor;
