@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @RequiredArgsConstructor
 @Getter
-public enum PostErrorCode implements  ErrorCode {
+public enum PostErrorCode implements ErrorCode {
 
     PostNotFound(HttpStatus.NOT_FOUND.value(), "Post is not found.");
 

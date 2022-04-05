@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @RequiredArgsConstructor
 @Getter
-public enum JWTErrorCode {
+public enum JWTErrorCode implements ErrorCode {
 
     InvalidRefreshTokenError(HttpStatus.BAD_REQUEST.value(), "Invalid refresh Token");
 
