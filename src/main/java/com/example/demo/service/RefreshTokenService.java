@@ -1,8 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.exception.DemoException;
+import com.example.demo.error.exception.DemoException;
 import com.example.demo.domain.RefreshToken;
 import com.example.demo.domain.RefreshTokenRepository;
+import com.example.demo.error.exception.InvalidRefreshTokenException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class RefreshTokenService {
 
     public void validateRefreshToken(String token) {
         refreshTokenRepository.findByToken(token)
-                .orElseThrow(() -> new DemoException("Invalid refresh Token"));
+                .orElseThrow(() -> new InvalidRefreshTokenException("Invalid refresh Token"));
     }
 
     public void deleteRefreshToken(String token) {

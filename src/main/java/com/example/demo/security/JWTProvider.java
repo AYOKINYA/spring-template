@@ -1,6 +1,6 @@
 package com.example.demo.security;
 
-import com.example.demo.exception.DemoException;
+import com.example.demo.error.exception.DemoException;
 import com.example.demo.domain.ERole;
 import com.example.demo.domain.User;
 import com.example.demo.domain.UserRepository;

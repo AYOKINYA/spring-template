@@ -1,10 +1,13 @@
-package com.example.demo.exception.handler;
+package com.example.demo.error.handler;
 
-import com.example.demo.exception.DemoException;
-import com.example.demo.exception.PostNotFoundException;
-import com.example.demo.exception.errormessage.ErrorMessage;
-import com.example.demo.exception.errorcode.PostErrorCode;
+import com.example.demo.error.exception.DemoException;
+import com.example.demo.error.exception.InvalidRefreshTokenException;
+import com.example.demo.error.exception.PostNotFoundException;
+import com.example.demo.error.errorcode.JWTErrorCode;
+import com.example.demo.error.errormessage.ErrorMessage;
+import com.example.demo.error.errorcode.PostErrorCode;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -25,6 +28,30 @@ public class ControllerExceptionHandler {
                 .timestamp(new Date())
                 .build();
 
+        return msg;
+    }
+
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ErrorMessage UsernameNotFoundExceptionHandler(UsernameNotFoundException ex, WebRequest request) {
+        ErrorMessage msg = ErrorMessage.builder()
+                .statusCode(HttpStatus.NOT_FOUND.value())
+                .message(ex.getMessage())
+                .description(request.getDescription(false))
+                .timestamp(new Date())
+                .build();
+        return msg;
+    }
+
+    @ExceptionHandler(InvalidRefreshTokenException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ErrorMessage InvalidRefreshTokenExceptionHandler(WebRequest request) {
+        ErrorMessage msg = ErrorMessage.builder()
+                .statusCode(JWTErrorCode.InvalidRefreshTokenError.getCode())
+                .message(JWTErrorCode.InvalidRefreshTokenError.getMessage())
+                .description(request.getDescription(false))
+                .timestamp(new Date())
+                .build();
         return msg;
     }
 

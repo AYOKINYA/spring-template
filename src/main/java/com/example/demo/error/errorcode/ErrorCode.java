@@ -1,4 +1,4 @@
-package com.example.demo.exception.errorcode;
+package com.example.demo.error.errorcode;
 
 public interface ErrorCode {
     int     getCode();
