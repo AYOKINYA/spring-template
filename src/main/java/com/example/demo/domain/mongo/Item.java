@@ -15,21 +15,21 @@ public class Item {
     private int y;
     private int w;
     private int h;
-    private int maxW;
-    private int maxH;
+    private int minW;
+    private int minH;
 
     @JsonProperty("static")
     private boolean isStatic;
 
     @Builder
-    public Item(int i, int x, int y, int w, int h, int maxW, int maxH, boolean isStatic) {
+    public Item(int i, int x, int y, int w, int h, int minW, int minH, boolean isStatic) {
         this.i = Integer.toString(i);
         this.x = x;
         this.y = y;
         this.w = w;
         this.h = h;
-        this.maxW = maxW;
-        this.maxH = maxH;
+        this.minW = minW;
+        this.minH = minH;
         this.isStatic = isStatic;
     }
 }
