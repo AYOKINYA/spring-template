@@ -1,9 +1,7 @@
 package com.example.demo.error.handler;
 
 import com.example.demo.error.errorcode.ErrorCode;
-import com.example.demo.error.exception.DemoException;
-import com.example.demo.error.exception.InvalidRefreshTokenException;
-import com.example.demo.error.exception.PostNotFoundException;
+import com.example.demo.error.exception.*;
 import com.example.demo.error.errorcode.JWTErrorCode;
 import com.example.demo.error.errormessage.ErrorMessage;
 import com.example.demo.error.errorcode.PostErrorCode;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @RestControllerAdvice
 public class ControllerExceptionHandler {
@@ -26,8 +23,8 @@ public class ControllerExceptionHandler {
         return makeErrorMessage(PostErrorCode.PostNotFound, request);
     }
 
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
     @ExceptionHandler(UsernameNotFoundException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
     public ErrorMessage UsernameNotFoundExceptionHandler(UsernameNotFoundException ex, WebRequest request) {
         return makeErrorMessage(HttpStatus.NOT_FOUND.value(), ex, request);
     }
@@ -36,6 +33,12 @@ public class ControllerExceptionHandler {
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public ErrorMessage InvalidRefreshTokenExceptionHandler(WebRequest request) {
         return makeErrorMessage(JWTErrorCode.InvalidRefreshTokenError, request);
+    }
+
+    @ExceptionHandler(RobotException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ErrorMessage InvalidParameterHandler(RobotException ex, WebRequest request) {
+        return makeErrorMessage(ex, request);
     }
 
     @ExceptionHandler(DemoException.class)
@@ -64,6 +67,17 @@ public class ControllerExceptionHandler {
     private ErrorMessage makeErrorMessage(int code, Exception ex, WebRequest request) {
         ErrorMessage msg = ErrorMessage.builder()
                 .statusCode(code)
+                .message(ex.getMessage())
+                .description(request.getDescription(false))
+                .timestamp(LocalDateTime.now())
+                .build();
+
+        return msg;
+    }
+
+    private ErrorMessage makeErrorMessage(CustomException ex, WebRequest request) {
+        ErrorMessage msg = ErrorMessage.builder()
+                .statusCode(ex.getStatus().value())
                 .message(ex.getMessage())
                 .description(request.getDescription(false))
                 .timestamp(LocalDateTime.now())

@@ -14,8 +14,18 @@ public class ZeroMqConfig {
     }
 
     @Bean
-    public ZmqObj zmqObj() {
-        return new ZmqObj(zContext());
+    public ZContext zContext2() {
+        return new ZContext();
+    }
+
+    @Bean
+    public ZmqPubObj zmqPubObj() {
+        return new ZmqPubObj(zContext());
+    }
+
+    @Bean
+    public ZmqSubObj zmqSubObj() {
+        return new ZmqSubObj(zContext2());
     }
 
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import static org.springframework.http.ResponseEntity.status;
 
-@Controller
+@RestController
 @RequestMapping("/api/v1/layouts")
 @RequiredArgsConstructor
 public class LayoutController {

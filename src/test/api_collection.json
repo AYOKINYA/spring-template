@@ -1,0 +1,1363 @@
+{
+	"info": {
+		"_postman_id": "b8b29058-2c9a-4f9b-9791-63bea4f908ad",
+		"name": "Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "layouts",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/v1/layouts/second",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						},
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"username\" : \"second\",\n        \"layouts\" : [\n                {\n                        \"layoutId\" : \"62383b012e6384083c89ba0d\",\n                        \"layoutName\" : \"asd\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"0\",\n                                        \"x\" : 9,\n                                        \"y\" : 0,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"1\",\n                                        \"x\" : 9,\n                                        \"y\" : 6,\n                                        \"w\" : 3,\n                                        \"h\" : 6,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"2\",\n                                        \"x\" : 9,\n                                        \"y\" : 12,\n                                        \"w\" : 3,\n                                        \"h\" : 7,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": false\n                },\n                {\n                        \"layoutId\" : \"623c223cc64e091a9a2bc422\",\n                        \"layoutName\" : \"bb\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"2\",\n                                        \"x\" : 1,\n                                        \"y\" : 9,\n                                        \"w\" : 3,\n                                        \"h\" : 7,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": true\n                },\n                {\n                        \"layoutId\" : \"623c26e83a777502ce2ad9cb\",\n                        \"layoutName\" : \"qqqqq\",\n                        \"items\" : [ ],\n                        \"isVideoOn\": false\n                },\n                {\n                        \"layoutId\" : \"62383b012e6384083c89ba0e\",\n                        \"layoutName\" : \"qwe\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"0\",\n                                        \"x\" : 2,\n                                        \"y\" : 0,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"1\",\n                                        \"x\" : 5,\n                                        \"y\" : 5,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": false\n                }\n        ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/layouts/second",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"layouts",
+								"second"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/layouts/second",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"username\" : \"second\",\n        \"layouts\" : [\n                {\n                        \"layoutId\" : \"62383b012e6384083c89ba0d\",\n                        \"layoutName\" : \"asd\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"0\",\n                                        \"x\" : 9,\n                                        \"y\" : 0,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"1\",\n                                        \"x\" : 9,\n                                        \"y\" : 6,\n                                        \"w\" : 3,\n                                        \"h\" : 6,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"2\",\n                                        \"x\" : 9,\n                                        \"y\" : 12,\n                                        \"w\" : 3,\n                                        \"h\" : 7,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": false\n                },\n                {\n                        \"layoutId\" : \"623c223cc64e091a9a2bc422\",\n                        \"layoutName\" : \"bb\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"2\",\n                                        \"x\" : 1,\n                                        \"y\" : 9,\n                                        \"w\" : 3,\n                                        \"h\" : 7,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": true\n                },\n                {\n                        \"layoutId\" : \"623c26e83a777502ce2ad9cb\",\n                        \"layoutName\" : \"qqqqq\",\n                        \"items\" : [ ],\n                        \"isVideoOn\": false\n                },\n                {\n                        \"layoutId\" : \"62383b012e6384083c89ba0e\",\n                        \"layoutName\" : \"qwe\",\n                        \"items\" : [\n                                {\n                                        \"i\" : \"0\",\n                                        \"x\" : 2,\n                                        \"y\" : 0,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                },\n                                {\n                                        \"i\" : \"1\",\n                                        \"x\" : 5,\n                                        \"y\" : 5,\n                                        \"w\" : 3,\n                                        \"h\" : 5,\n                                        \"maxW\" : 12,\n                                        \"maxH\" : 12,\n                                        \"isStatic\" : false\n                                }\n                        ],\n                        \"isVideoOn\": false\n                }\n        ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/layouts/second",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"layouts",
+										"second"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "http://localhost:8080/api/v1/layouts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"second\",\n    \"layouts\": [\n        {\n            \"layoutId\": \"62383b012e6384083c89ba0d\",\n            \"layoutName\": \"Operate\",\n            \"isVideoOn\": true,\n            \"items\": [\n                {\n                    \"i\": \"0\",\n                    \"x\": 9,\n                    \"y\": 0,\n                    \"w\": 3,\n                    \"h\": 4,\n                    \"minW\": 2,\n                    \"minH\": 3,\n                    \"static\": false\n                },\n                {\n                    \"i\": \"2\",\n                    \"x\": 9,\n                    \"y\": 12,\n                    \"w\": 3,\n                    \"h\": 12,\n                    \"minW\": 3,\n                    \"minH\": 3,\n                    \"static\": false\n                }\n            ]\n        },\n        {\n            \"layoutId\": \"623c26e83a777502ce2ad9cb\",\n            \"layoutName\": \"test\",\n            \"isVideoOn\": false,\n            \"items\": []\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/layouts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"layouts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/layouts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"second\",\n    \"layouts\": [\n        {\n            \"layoutId\": \"62383b012e6384083c89ba0d\",\n            \"layoutName\": \"Operate\",\n            \"isVideoOn\": true,\n            \"items\": [\n                {\n                    \"i\": \"0\",\n                    \"x\": 9,\n                    \"y\": 0,\n                    \"w\": 3,\n                    \"h\": 4,\n                    \"minW\": 2,\n                    \"minH\": 3,\n                    \"static\": false\n                },\n                {\n                    \"i\": \"2\",\n                    \"x\": 9,\n                    \"y\": 12,\n                    \"w\": 3,\n                    \"h\": 12,\n                    \"minW\": 3,\n                    \"minH\": 3,\n                    \"static\": false\n                }\n            ]\n        },\n        {\n            \"layoutId\": \"623c26e83a777502ce2ad9cb\",\n            \"layoutName\": \"test\",\n            \"isVideoOn\": false,\n            \"items\": []\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/layouts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"layouts"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "robot",
+			"item": [
+				{
+					"name": "basic/estop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/basic/estop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"basic",
+								"estop"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/basic/estop",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/basic/estop",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"basic",
+										"estop"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "basic/power",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/basic/power",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"basic",
+								"power"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/basic/power",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/basic/power",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"basic",
+										"power"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=ISO-8859-1"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 26 Apr 2022 00:29:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Power"
+						}
+					]
+				},
+				{
+					"name": "behavior/dock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/dock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"dock"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/dock",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/dock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"dock"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/undock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/undock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"undock"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/undock",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/undock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"undock"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/forward",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/forward",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"forward"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/forward",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/forward",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"forward"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/backward",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/backward",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"backward"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/backward",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/backward",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"backward"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/left",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/left",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"left"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/left",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/left",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"left"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/right",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/right",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"right"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/right",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/right",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"right"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/rotate/left",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/rotate/left",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"rotate",
+								"left"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/rotate/left",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/rotate/left",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"rotate",
+										"left"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/rotate/right",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/rotate/right",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"rotate",
+								"right"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/rotate/right",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/rotate/right",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"rotate",
+										"right"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/stand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/stand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"stand"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/stand",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/stand",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"stand"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/sit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/sit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"sit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/sit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/sit",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"sit"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/self",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/self",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"self"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/self",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/self",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"self"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/stop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/stop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"stop"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/stop",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/stop",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"stop"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/arm/ok",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/arm/ok",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"arm",
+								"ok"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/arm/ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/arm/ok",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"arm",
+										"ok"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/arm/retry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/arm/retry",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"arm",
+								"retry"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/arm/retry",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/arm/retry",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"arm",
+										"retry"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "setting/speeds/{mode}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/setting/speeds/m",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"setting",
+								"speeds",
+								"m"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/setting/speeds/{mode}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/setting/speeds/s",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"setting",
+										"speeds",
+										"s"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "setting/pitch/{value}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/setting/pitch/36",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"setting",
+								"pitch",
+								"36"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/setting/pitch/{value}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/setting/pitch/56",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"setting",
+										"pitch",
+										"56"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "setting/height/{value}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/setting/height/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"setting",
+								"height",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/setting/height/{value}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/setting/height/37",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"setting",
+										"height",
+										"37"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/forward/rotate/left",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/forward/rotate/left",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"forward",
+								"rotate",
+								"left"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/forward/rotate/left",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/forward/rotate/left",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"forward",
+										"rotate",
+										"left"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/forward/rotate/right",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/forward/rotate/right",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"forward",
+								"rotate",
+								"right"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/forward/rotate/right",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/forward/rotate/right",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"forward",
+										"rotate",
+										"right"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/backward/rotate/right",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/backward/rotate/right",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"backward",
+								"rotate",
+								"right"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/backward/rotate/right",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/backward/rotate/right",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"backward",
+										"rotate",
+										"right"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "behavior/backward/rotate/left",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/behavior/backward/rotate/left",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"behavior",
+								"backward",
+								"rotate",
+								"left"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8080/api/v1/behavior/backward/rotate/left",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/behavior/backward/rotate/left",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"behavior",
+										"backward",
+										"rotate",
+										"left"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	]
+}
